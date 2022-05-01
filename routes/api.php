@@ -17,3 +17,24 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['namespace' => 'Post', 'prefix' => '/posts'], function () {
+
+    Route::get('/', 'IndexController');
+    Route::get('/{post}', 'ShowController');
+
+    Route::post('/', 'StoreController');
+    Route::patch('/{post}', 'UpdateController');
+    Route::delete('/{post}', 'DestroyController');
+
+    Route::group(['namespace' => 'Comment', 'prefix' => '/{post}/comments'], function () {
+        Route::get('/', 'IndexController');
+        Route::post('/', 'StoreController');
+        Route::patch('/{comment}', 'UpdateController');
+        Route::delete('/{comment}', 'DestroyController');
+    });
+
+    Route::group(['namespace' => 'Reaction', 'prefix' => '/{post}'], function () {
+        Route::get('/reactions', 'IndexController');
+    });
+});
