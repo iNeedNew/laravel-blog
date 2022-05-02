@@ -14,6 +14,77 @@ _DATABASE_ - **MySQL**
 **Rest API**
 -----
 
+## Auth API
+
+* **POST /auth/register**
+    * Register
+    * request
+    ```json
+    {
+    "nickname": "string",
+    "email": "string|email",
+    "password": "string",
+    "password_confirmation": "string"
+    } 
+    ```
+    * response
+    ```json
+    {
+    "status": "ok",
+    "message": "Register",
+    "data": [] 
+    }
+    ```
+
+
+* **POST /auth/login**
+    * Login
+    * request
+    ```json
+    {
+    "email": "string|email",
+    "password": "string"
+    } 
+    ```
+    * response
+    ```json
+    {
+    "access_token": "string",
+    "token_type": "string",
+    "expires_in": "integer:time:sec"
+    } 
+    ```
+
+* **POST /auth/me**
+    * Get user by token
+    * request
+      * user data. eq /users/<id>
+
+* **POST /auth/refresh**
+    * Update token
+    * request
+    ```json
+    {
+    "token": "new_token",
+    "token_type": "str",
+    "expires_in": "int"
+  }
+    ```
+
+* **POST /auth/logout**
+    * Logout
+    * request
+    ```json
+    { 
+    "message": "str",
+    "status": "ok:str"
+  }
+    ```
+
+-----
+
+## User API
+
 * **/users**
     * Get all users
 * **/users/{user_id}**
@@ -28,6 +99,8 @@ _DATABASE_ - **MySQL**
     * Get follows user
 
 -----
+
+## Post API
 
 * **GET /posts**
     * Get posts
@@ -155,8 +228,6 @@ _DATABASE_ - **MySQL**
 
 * **DELETE /posts/{post_id}**
     * Delete post
-
-
 
 
 * **POST /posts/{post_id}/comments**
