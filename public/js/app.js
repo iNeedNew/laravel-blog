@@ -5272,6 +5272,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Index"
 });
@@ -5368,6 +5384,19 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MOD
       return __webpack_require__.e(/*! import() */ "resources_js_components_PostFeed_Index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/PostFeed/Index */ "./resources/js/components/PostFeed/Index.vue"));
     },
     name: 'post.index'
+  }, // Auth
+  {
+    path: '/sign-up',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_components_Auth_SignUp_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Auth/SignUp */ "./resources/js/components/Auth/SignUp.vue"));
+    },
+    name: 'auth.sign_up'
+  }, {
+    path: '/sign-in',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_components_Auth_SignIn_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Auth/SignIn */ "./resources/js/components/Auth/SignIn.vue"));
+    },
+    name: 'auth.sign_in'
   }]
 }));
 
@@ -27933,7 +27962,49 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [_c("router-view")], 1)
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "header p-3" }, [
+        _c("ul", { staticClass: "nav justify-content-center" }, [
+          _c(
+            "li",
+            { staticClass: "nav-item" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: { to: { name: "auth.sign_in" } },
+                },
+                [_vm._v("Sign In")]
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "nav-item" },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "nav-link",
+                  attrs: { to: { name: "auth.sign_up" } },
+                },
+                [_vm._v("Sign Up")]
+              ),
+            ],
+            1
+          ),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "content w-50" }, [_c("router-view")], 1),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -44660,7 +44731,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_PostFeed_Index_vue":1,"resources_js_store_modules_some_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_PostFeed_Index_vue":1,"resources_js_components_Auth_SignUp_vue":1,"resources_js_components_Auth_SignIn_vue":1,"resources_js_store_modules_some_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
